@@ -1,0 +1,41 @@
+# EduBridge .gitignore
+
+# OAuth Configuration (contains sensitive credentials)
+config.js
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Node modules (if you add npm packages later)
+node_modules/
+package-lock.json
+
+# Build files
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Netlify
+.netlify/
+
+# Local development
+.cache/
