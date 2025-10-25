@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EduBridge - Bridging the gap in education for underprivileged children">
+    <meta name="author" content="EduBridge Team">
+    <title>EduBridge - Bridging the Gap in Education</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="auth-wrapper">
+        <div class="auth-container">
+            <div class="auth-logo">
+                <div class="auth-logo-icon">🎓</div>
+                <div class="auth-logo-text">EduBridge</div>
+            </div>
+
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Log in to continue making an impact</p>
+            </div>
+
+            <div id="loginError" class="error-message"></div>
+            <div id="loginSuccess" class="success-message"></div>
+
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password"
+                        required>
+                </div>
+
+                <div class="forgot-password">
+                    <a onclick="showForgotPassword()">Forgot Password?</a>
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" id="rememberMe">
+                    <label for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn-auth">Log In</button>
+            </form>
+
+            <div class="auth-divider">or continue with</div>
+
+            <div class="social-buttons">
+                <button class="btn-social" onclick="socialLogin('google')">
+                    <span>🔍</span> Google
+                </button>
+                <button class="btn-social" onclick="socialLogin('github')">
+                    <span>⚫</span> GitHub
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                Don't have an account? <a onclick="switchToSignup()">Sign Up</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="auth-wrapper">
+        <div class="auth-container">
+            <div class="auth-logo">
+                <div class="auth-logo-icon">🎓</div>
+                <div class="auth-logo-text">EduBridge</div>
+            </div>
+
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join us in bridging the gap in education</p>
+            </div>
+
+            <div id="signupError" class="error-message"></div>
+            <div id="signupSuccess" class="success-message"></div>
+
+            <form id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" class="form-input" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupEmail">Email Address</label>
+                    <input type="email" id="signupEmail" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" class="form-input"
+                        placeholder="Create a password (min 8 characters)" required minlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" class="form-input"
+                        placeholder="Confirm your password" required>
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the Terms of Service and Privacy Policy</label>
+                </div>
+
+                <button type="submit" class="btn-auth">Create Account</button>
+            </form>
+
+            <div class="auth-divider">or sign up with</div>
+
+            <div class="social-buttons">
+                <button class="btn-social" onclick="socialLogin('google')">
+                    <span>🔍</span> Google
+                </button>
+                <button class="btn-social" onclick="socialLogin('github')">
+                    <span>⚫</span> GitHub
+                </button>
+            </div>
+
+            <div class="auth-footer">
+                Already have an account? <a onclick="switchToLogin()">Log In</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+            <div class="logo-icon">🎓</div>
+            EduBridge
+        </div>
+
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="showPage('dashboard')">
+                <span class="nav-icon">📊</span>
+                Dashboard
+            </li>
+            <li class="nav-item" onclick="showPage('ngo-directory')">
+                <span class="nav-icon">🏢</span>
+                NGO Directory
+            </li>
+            <li class="nav-item" onclick="showPage('learning-app')">
+                <span class="nav-icon">📚</span>
+                Learning App
+            </li>
+            <li class="nav-item" onclick="showPage('sponsor-connect')">
+                <span class="nav-icon">💚</span>
+                Sponsor Connect
+            </li>
+            <li class="nav-item" onclick="showPage('stories')">
+                <span class="nav-icon">📖</span>
+                Stories
+            </li>
+            <li class="nav-item" onclick="showPage('progress-summary')">
+                <span class="nav-icon">📝</span>
+                Progress Summary
+            </li>
+            <li class="nav-item" onclick="showPage('volunteer-portal')">
+                <span class="nav-icon">🤝</span>
+                Volunteer Portal
+            </li>
+        </ul>
+
+        <div class="user-profile">
+            <div class="profile-avatar" id="userAvatar">G</div>
+            <div class="profile-info">
+                <h4 id="userName">Guest</h4>
+                <p id="userRole">Not logged in</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent" style="display: none;">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="page-title" id="pageTitle">Dashboard</div>
+            <div class="top-bar-right">
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Search...">
+                </div>
+                <button class="theme-toggle">🌙</button>
+                <div class="user-avatar" onclick="showUserMenu()" id="topUserAvatar">G</div>
+            </div>
+        </div>
+
+        <!-- DASHBOARD PAGE -->
+        <div id="dashboard" class="page active">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-card">
+                    <h1>Welcome to EduBridge</h1>
+                    <p>Bridging the gap in education for underprivileged children. Your dashboard to create, manage, and
+                        track impact.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showPage('ngo-directory')">Explore NGO's</button>
+                        <button class="btn btn-secondary" onclick="showPage('sponsor-connect')">Start a
+                            Campaign</button>
+                    </div>
+                </div>
+                <div class="hero-image">🎓</div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-label">Children Supported</span>
+                        <span class="stat-icon">👶</span>
+                    </div>
+                    <div class="stat-value">12,530</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-label">NGOs Onboarded</span>
+                        <span class="stat-icon">📋</span>
+                    </div>
+                    <div class="stat-value">47</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-label">Volunteer Hours</span>
+                        <span class="stat-icon">👥</span>
+                    </div>
+                    <div class="stat-value">8,129 hrs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <span class="stat-label">Donations Raised</span>
+                        <span class="stat-icon">₹</span>
+                    </div>
+                    <div class="stat-value">₹75,240</div>
+                </div>
+            </div>
+
+            <!-- Quick Access -->
+            <div class="quick-access">
+                <div class="access-card" onclick="showPage('ngo-directory')">
+                    <div class="access-icon" style="background: #3b82f6;">📁</div>
+                    <h3>NGO Directory</h3>
+                    <p>Access the ngo directory.</p>
+                    <span style="color: #3b82f6; font-size: 20px;">→</span>
+                </div>
+                <div class="access-card" onclick="showPage('learning-app')">
+                    <div class="access-icon" style="background: #f97316;">📚</div>
+                    <h3>Learning App</h3>
+                    <p>Access the learning app.</p>
+                    <span style="color: #f97316; font-size: 20px;">→</span>
+                </div>
+                <div class="access-card" onclick="showPage('sponsor-connect')">
+                    <div class="access-icon" style="background: #10b981;">💚</div>
+                    <h3>Sponsor Connect</h3>
+                    <p>Access the sponsor connect.</p>
+                    <span style="color: #10b981; font-size: 20px;">→</span>
+                </div>
+                <div class="access-card" onclick="showPage('volunteer-portal')">
+                    <div class="access-icon" style="background: #8b5cf6;">👥</div>
+                    <h3>Volunteer Portal</h3>
+                    <p>Access the volunteer portal.</p>
+                    <span style="color: #8b5cf6; font-size: 20px;">→</span>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Transparency Report</h3>
+                        <p>Funds Received vs. Allocated</p>
+                    </div>
+                    <div class="chart-placeholder">📊</div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Donor & Volunteer Highlights</h3>
+                        <p>This month's top contributors.</p>
+                    </div>
+                    <div class="highlights-list">
+                        <div class="highlight-item">
+                            <div class="highlight-avatar">👤</div>
+                            <div class="highlight-info">
+                                <h4>Ankita Sharma</h4>
+                                <p>Top Donor</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-avatar">👤</div>
+                            <div class="highlight-info">
+                                <h4>Rohan Verma</h4>
+                                <p>Top Volunteer</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-avatar">👤</div>
+                            <div class="highlight-info">
+                                <h4>Priyam Patel</h4>
+                                <p>Rising Star Donor</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-avatar">👤</div>
+                            <div class="highlight-info">
+                                <h4>Aditya Singh</h4>
+                                <p>Lead Mentor</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-avatar">👤</div>
+                            <div class="highlight-info">
+                                <h4>Sameer Joshi</h4>
+                                <p>Community Champion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Stories -->
+            <h2 style="margin-bottom: 25px; font-size: 28px;">Success Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card" onclick="showPage('stories')">
+                    <div class="story-image">📚</div>
+                    <div class="story-content">
+                        <span class="story-tag">Literacy</span>
+                        <h3>Priya's Journey to Literacy</h3>
+                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and
+                            topp...</p>
+                        <span class="read-more">Read More →</span>
+                    </div>
+                </div>
+                <div class="story-card" onclick="showPage('stories')">
+                    <div class="story-image">🎤</div>
+                    <div class="story-content">
+                        <span class="story-tag">Literacy</span>
+                        <h3>Priya's Journey to Literacy</h3>
+                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and
+                            topp...</p>
+                        <span class="read-more">Read More →</span>
+                    </div>
+                </div>
+                <div class="story-card" onclick="showPage('stories')">
+                    <div class="story-image">🎓</div>
+                    <div class="story-content">
+                        <span class="story-tag">Literacy</span>
+                        <h3>Priya's Journey to Literacy</h3>
+                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and
+                            topp...</p>
+                        <span class="read-more">Read More →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional pages would continue here but I'll create them in a separate pages.html include file for better organization -->
+        <!-- For the complete implementation, I'll provide the structure for remaining pages -->
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
