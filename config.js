@@ -1,14 +1,14 @@
 // OAuth Configuration
-// Replace these with your actual OAuth credentials
+// Your actual OAuth credentials configured
 
 const OAUTH_CONFIG = {
     google: {
-        clientId: 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com',
+        clientId: '585142524441-p7s5ln8copuk7isoh4tjd1h9dqtbgbov.apps.googleusercontent.com',
         redirectUri: 'https://shreyas-purkar52.github.io/edubridge/',
         scope: 'profile email'
     },
     github: {
-        clientId: 'YOUR_GITHUB_CLIENT_ID',
+        clientId: 'Ov23liLoAudsiZHkTdei',
         redirectUri: 'https://shreyas-purkar52.github.io/edubridge/',
         scope: 'read:user user:email'
     }
