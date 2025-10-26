@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="EduBridge - Bridging the gap in education for underprivileged children">
-    <meta name="author" content="EduBridge Team">
+    <meta name="author" content="Shreyas Purkar">
     <title>EduBridge - Bridging the Gap in Education</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- Login Modal -->
     <div id="loginModal" class="auth-wrapper">
@@ -18,7 +16,7 @@
                 <div class="auth-logo-icon">🎓</div>
                 <div class="auth-logo-text">EduBridge</div>
             </div>
-
+            
             <div class="auth-header">
                 <h1>Welcome Back</h1>
                 <p>Log in to continue making an impact</p>
@@ -30,13 +28,24 @@
             <form id="loginForm" onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label for="loginEmail">Email Address</label>
-                    <input type="email" id="loginEmail" class="form-input" placeholder="Enter your email" required>
+                    <input 
+                        type="email" 
+                        id="loginEmail" 
+                        class="form-input" 
+                        placeholder="Enter your email"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" class="form-input" placeholder="Enter your password"
-                        required>
+                    <input 
+                        type="password" 
+                        id="loginPassword" 
+                        class="form-input" 
+                        placeholder="Enter your password"
+                        required
+                    >
                 </div>
 
                 <div class="forgot-password">
@@ -75,7 +84,7 @@
                 <div class="auth-logo-icon">🎓</div>
                 <div class="auth-logo-text">EduBridge</div>
             </div>
-
+            
             <div class="auth-header">
                 <h1>Create Account</h1>
                 <p>Join us in bridging the gap in education</p>
@@ -87,24 +96,47 @@
             <form id="signupForm" onsubmit="handleSignup(event)">
                 <div class="form-group">
                     <label for="signupName">Full Name</label>
-                    <input type="text" id="signupName" class="form-input" placeholder="Enter your full name" required>
+                    <input 
+                        type="text" 
+                        id="signupName" 
+                        class="form-input" 
+                        placeholder="Enter your full name"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="signupEmail">Email Address</label>
-                    <input type="email" id="signupEmail" class="form-input" placeholder="Enter your email" required>
+                    <input 
+                        type="email" 
+                        id="signupEmail" 
+                        class="form-input" 
+                        placeholder="Enter your email"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="signupPassword">Password</label>
-                    <input type="password" id="signupPassword" class="form-input"
-                        placeholder="Create a password (min 8 characters)" required minlength="8">
+                    <input 
+                        type="password" 
+                        id="signupPassword" 
+                        class="form-input" 
+                        placeholder="Create a password (min 8 characters)"
+                        required
+                        minlength="8"
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="signupConfirmPassword">Confirm Password</label>
-                    <input type="password" id="signupConfirmPassword" class="form-input"
-                        placeholder="Confirm your password" required>
+                    <input 
+                        type="password" 
+                        id="signupConfirmPassword" 
+                        class="form-input" 
+                        placeholder="Confirm your password"
+                        required
+                    >
                 </div>
 
                 <div class="form-checkbox">
@@ -138,7 +170,7 @@
             <div class="logo-icon">🎓</div>
             EduBridge
         </div>
-
+        
         <ul class="nav-menu">
             <li class="nav-item active" onclick="showPage('dashboard')">
                 <span class="nav-icon">📊</span>
@@ -196,22 +228,18 @@
 
         <!-- DASHBOARD PAGE -->
         <div id="dashboard" class="page active">
-            <!-- Hero Section -->
             <div class="hero-section">
                 <div class="hero-card">
                     <h1>Welcome to EduBridge</h1>
-                    <p>Bridging the gap in education for underprivileged children. Your dashboard to create, manage, and
-                        track impact.</p>
+                    <p>Bridging the gap in education for underprivileged children. Your dashboard to create, manage, and track impact.</p>
                     <div class="hero-buttons">
                         <button class="btn btn-primary" onclick="showPage('ngo-directory')">Explore NGO's</button>
-                        <button class="btn btn-secondary" onclick="showPage('sponsor-connect')">Start a
-                            Campaign</button>
+                        <button class="btn btn-secondary" onclick="showPage('sponsor-connect')">Start a Campaign</button>
                     </div>
                 </div>
                 <div class="hero-image">🎓</div>
             </div>
 
-            <!-- Stats Grid -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-header">
@@ -243,7 +271,6 @@
                 </div>
             </div>
 
-            <!-- Quick Access -->
             <div class="quick-access">
                 <div class="access-card" onclick="showPage('ngo-directory')">
                     <div class="access-icon" style="background: #3b82f6;">📁</div>
@@ -271,7 +298,6 @@
                 </div>
             </div>
 
-            <!-- Charts Section -->
             <div class="charts-section">
                 <div class="chart-card">
                     <div class="chart-header">
@@ -326,7 +352,6 @@
                 </div>
             </div>
 
-            <!-- Success Stories -->
             <h2 style="margin-bottom: 25px; font-size: 28px;">Success Stories</h2>
             <div class="stories-grid">
                 <div class="story-card" onclick="showPage('stories')">
@@ -334,8 +359,7 @@
                     <div class="story-content">
                         <span class="story-tag">Literacy</span>
                         <h3>Priya's Journey to Literacy</h3>
-                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and
-                            topp...</p>
+                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and topp...</p>
                         <span class="read-more">Read More →</span>
                     </div>
                 </div>
@@ -344,8 +368,7 @@
                     <div class="story-content">
                         <span class="story-tag">Literacy</span>
                         <h3>Priya's Journey to Literacy</h3>
-                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and
-                            topp...</p>
+                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and topp...</p>
                         <span class="read-more">Read More →</span>
                     </div>
                 </div>
@@ -354,20 +377,458 @@
                     <div class="story-content">
                         <span class="story-tag">Literacy</span>
                         <h3>Priya's Journey to Literacy</h3>
-                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and
-                            topp...</p>
+                        <p>With access to our learning app, Priya, a first-generation learner, is now an avid reader and topp...</p>
                         <span class="read-more">Read More →</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Additional pages would continue here but I'll create them in a separate pages.html include file for better organization -->
-        <!-- For the complete implementation, I'll provide the structure for remaining pages -->
+        <!-- LEARNING APP PAGE -->
+        <div id="learning-app" class="page">
+            <div class="app-hero">
+                <h1>EduBridge Learning App</h1>
+                <p>Interactive lessons, fun activities, and powerful resources to inspire a lifelong love for learning.</p>
+                <button class="btn btn-primary">Browse All Subjects</button>
+            </div>
 
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-image">🔢</div>
+                    <div class="subject-content">
+                        <h3>Fun with Math</h3>
+                        <p>Engaging games and puzzles to make learning math an exciting adventure. Covers basics from counting to fractions.</p>
+                        <button class="btn btn-primary btn-full">Start Learning</button>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-image">🔬</div>
+                    <div class="subject-content">
+                        <h3>Science Explorers</h3>
+                        <p>Discover the wonders of the natural world through interactive experiments and virtual field trips.</p>
+                        <button class="btn btn-primary btn-full">Start Learning</button>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-image">📖</div>
+                    <div class="subject-content">
+                        <h3>Reading Corner</h3>
+                        <p>A collection of beautifully illustrated stories and read-along audiobooks to foster a love for reading.</p>
+                        <button class="btn btn-primary btn-full">Start Learning</button>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-image">💻</div>
+                    <div class="subject-content">
+                        <h3>Creative Coding</h3>
+                        <p>Learn the fundamentals of coding by creating your own animations and simple games. No experience needed!</p>
+                        <button class="btn btn-primary btn-full">Start Learning</button>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-image">🎨</div>
+                    <div class="subject-content">
+                        <h3>Art Studio</h3>
+                        <p>Unleash your creativity with digital drawing, painting, and crafting tutorials.</p>
+                        <button class="btn btn-primary btn-full">Start Learning</button>
+                    </div>
+                </div>
+                <div class="subject-card">
+                    <div class="subject-image">🌍</div>
+                    <div class="subject-content">
+                        <h3>History Quest</h3>
+                        <p>Travel back in time to learn about ancient civilizations, famous inventors, and pivotal world events.</p>
+                        <button class="btn btn-primary btn-full">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pagination">
+                <button>← Previous</button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>Next →</button>
+            </div>
+        </div>
+
+        <!-- NGO DIRECTORY PAGE -->
+        <div id="ngo-directory" class="page">
+            <div class="directory-header">
+                <h1>NGO Directory</h1>
+                <p>Discover, vet, and connect with non-governmental organizations making a real impact in child education.</p>
+            </div>
+
+            <div class="directory-section">
+                <div class="section-header">
+                    <div>
+                        <h3>Partner Organizations</h3>
+                        <p>A list of all NGOs currently on the EduBridge platform.</p>
+                    </div>
+                    <div class="search-add">
+                        <input type="text" class="search-input" placeholder="Search NGOs..." style="width: 250px;">
+                        <button class="btn btn-primary">Add New NGO</button>
+                    </div>
+                </div>
+
+                <table class="ngo-table">
+                    <thead>
+                        <tr>
+                            <th>NGO</th>
+                            <th>Focus Area</th>
+                            <th>Region</th>
+                            <th>Projects</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="ngo-info">
+                                    <div class="ngo-logo">🏢</div>
+                                    <span>Hope Foundation</span>
+                                </div>
+                            </td>
+                            <td>Child Education</td>
+                            <td>Mumbai, MH</td>
+                            <td>12</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td><button class="actions-btn">⋮</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ngo-info">
+                                    <div class="ngo-logo">🏢</div>
+                                    <span>Teach for India</span>
+                                </div>
+                            </td>
+                            <td>Literacy Programs</td>
+                            <td>Delhi, DL</td>
+                            <td>25</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td><button class="actions-btn">⋮</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ngo-info">
+                                    <div class="ngo-logo">🏢</div>
+                                    <span>Akshara Foundation</span>
+                                </div>
+                            </td>
+                            <td>Primary Education</td>
+                            <td>Bengaluru, KA</td>
+                            <td>8</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td><button class="actions-btn">⋮</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ngo-info">
+                                    <div class="ngo-logo">🏢</div>
+                                    <span>Pratham</span>
+                                </div>
+                            </td>
+                            <td>Skill Development</td>
+                            <td>All India</td>
+                            <td>40</td>
+                            <td><span class="status-badge status-active">Active</span></td>
+                            <td><button class="actions-btn">⋮</button></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="ngo-info">
+                                    <div class="ngo-logo">🏢</div>
+                                    <span>Vidya Chetana</span>
+                                </div>
+                            </td>
+                            <td>Higher Education</td>
+                            <td>Hyderabad, TS</td>
+                            <td>5</td>
+                            <td><span class="status-badge status-pending">Need Verification</span></td>
+                            <td><button class="actions-btn">⋮</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- PROGRESS SUMMARY PAGE -->
+        <div id="progress-summary" class="page">
+            <div class="directory-header">
+                <h1>Child Progress Summary</h1>
+                <p>Use our AI-powered tool to quickly generate a summary of a student's progress. Enter their performance details below to get started.</p>
+            </div>
+
+            <div class="summary-grid">
+                <div class="form-card">
+                    <h2>Student Details</h2>
+                    <p>Fill in the student's information below.</p>
+
+                    <div class="form-group">
+                        <label>Academic Performance</label>
+                        <textarea class="form-textarea" id="academic" placeholder="e.g., Excels in mathematics, struggles with reading comprehension..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Attendance</label>
+                        <textarea class="form-textarea" id="attendance" placeholder="e.g., 95% attendance, frequently late on Mondays..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Behavioral Notes</label>
+                        <textarea class="form-textarea" id="behavioral" placeholder="e.g., Proactive in class discussions, distracts other students at times..."></textarea>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="generateSummary()">✨ Generate Summary</button>
+                </div>
+
+                <div class="form-card result-card" id="resultCard">
+                    <div class="result-icon">✨</div>
+                    <h2>AI-Generated Summary</h2>
+                    <p>A concise summary of strengths and areas for improvement.</p>
+                    <p style="margin-top: 20px;">Your generated summary will appear here.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPONSOR CONNECT PAGE -->
+        <div id="sponsor-connect" class="page">
+            <div class="directory-header">
+                <h1>Sponsor Connect</h1>
+                <p>Fund high-impact educational projects and directly contribute to a child's future.</p>
+            </div>
+
+            <h2 style="margin-bottom: 25px; font-size: 24px;">Active Campaigns</h2>
+            <div class="campaigns-grid">
+                <div class="campaign-card">
+                    <div class="campaign-image">👩‍🏫</div>
+                    <div class="campaign-content">
+                        <h3>Digital Classroom for Rural Scholars</h3>
+                        <p class="campaign-org">by Hope Foundation</p>
+                        <p>Equip a classroom with 10 tablets and a smartboard to provide access to modern digital learning tools for...</p>
+                        <div class="progress-info">₹35,000 raised • 70% of ₹50,000</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%"></div>
+                        </div>
+                        <div class="campaign-buttons">
+                            <button class="btn btn-primary" style="flex: 1;">Sponsor Now</button>
+                            <button class="btn btn-secondary">Download Certificate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-image">📚</div>
+                    <div class="campaign-content">
+                        <h3>Library in a Box for a Village</h3>
+                        <p class="campaign-org">by Teach for India</p>
+                        <p>Provide a curated set of 200 books, shelves, and reading mats to establish a micro-library in a remote...</p>
+                        <div class="progress-info">₹18,500 raised • 93% of ₹20,000</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 93%"></div>
+                        </div>
+                        <div class="campaign-buttons">
+                            <button class="btn btn-primary" style="flex: 1;">Sponsor Now</button>
+                            <button class="btn btn-secondary">Download Certificate</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="campaign-card">
+                    <div class="campaign-image">🍽️</div>
+                    <div class="campaign-content">
+                        <h3>Mid-Day Meal for a Year</h3>
+                        <p class="campaign-org">by Akshara Foundation</p>
+                        <p>Ensure 100 children receive a nutritious daily meal, crucial for their physical health and ability to...</p>
+                        <div class="progress-info">₹45,000 raised • 38% of ₹120,000</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 38%"></div>
+                        </div>
+                        <div class="campaign-buttons">
+                            <button class="btn btn-primary" style="flex: 1;">Sponsor Now</button>
+                            <button class="btn btn-secondary">Download Certificate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wall-of-fame">
+                <h2 style="margin-bottom: 30px; font-size: 24px;">Sponsor Wall of Fame</h2>
+                <div class="sponsors-grid">
+                    <div class="sponsor-item">
+                        <div class="sponsor-logo">🏢</div>
+                        <div class="sponsor-name">Reliance Foundation</div>
+                        <span class="sponsor-tier tier-gold">Gold</span>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-logo">🏢</div>
+                        <div class="sponsor-name">Tata Trusts</div>
+                        <span class="sponsor-tier tier-gold">Gold</span>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-logo">🏢</div>
+                        <div class="sponsor-name">Infosys Foundation</div>
+                        <span class="sponsor-tier tier-silver">Silver</span>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-logo">👤</div>
+                        <div class="sponsor-name">Anika Sharma</div>
+                        <span class="sponsor-tier tier-bronze">Bronze</span>
+                    </div>
+                    <div class="sponsor-item">
+                        <div class="sponsor-logo">👤</div>
+                        <div class="sponsor-name">Rohan Verma</div>
+                        <span class="sponsor-tier tier-bronze">Bronze</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- STORIES PAGE -->
+        <div id="stories" class="page">
+            <div class="directory-header">
+                <h1>Voices of Impact</h1>
+                <p>Real stories of change, powered by our community of NGOs, sponsors, and volunteers.</p>
+            </div>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-image">📖</div>
+                    <div class="story-content">
+                        <h3>Priya's Journey to Literacy</h3>
+                        <p class="campaign-org">By Hope Foundation</p>
+                        <p>With access to our learning app, Priya, a first-generation learner from a small village, discovered a passion for stories. She is now an avid reader...</p>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">📚</div>
+                    <div class="story-content
+                    <h3>A Community Transformed by a Library</h3>
+                        <p class="campaign-org">By Teach for India</p>
+                        <p>Our volunteers, sponsored by corporate partners, helped set up a micro-library in a remote village. This simple initiative has opened up a world of...</p>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">💻</div>
+                    <div class="story-content">
+                        <h3>Tech Sparks Creativity in Underprivileged Kids</h3>
+                        <p class="campaign-org">By Pratham</p>
+                        <p>Donated tablets, loaded with educational software, are helping children in makeshift construction site classrooms learn coding basics and digital art. The...</p>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">🎓</div>
+                    <div class="story-content">
+                        <h3>From Dropout to Scholar</h3>
+                        <p class="campaign-org">By Akshara Foundation</p>
+                        <p>Ravi, who had dropped out of school to support his family, was connected with a mentor through our Sponsor Connect program. With financial and...</p>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">🍽️</div>
+                    <div class="story-content">
+                        <h3>Nutrition Fuels Learning</h3>
+                        <p class="campaign-org">By Hope Foundation</p>
+                        <p>The Mid-Day Meal program ensured that students at the Anmol Public School no longer had to study on an empty stomach. Teachers report improved...</p>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+                <div class="story-card">
+                    <div class="story-image">🤝</div>
+                    <div class="story-content">
+                        <h3>Volunteers Bridge the Learning Gap</h3>
+                        <p class="campaign-org">By Teach for India</p>
+                        <p>A team of dedicated volunteers spent their weekends conducting remedial classes for students struggling with core subjects. Their efforts have led...</p>
+                        <span class="read-more">Read Full Story →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VOLUNTEER PORTAL PAGE -->
+        <div id="volunteer-portal" class="page">
+            <div class="directory-header">
+                <h1>Volunteer Portal</h1>
+                <p>Your hub for making a difference. Track your impact, find opportunities, and earn recognition.</p>
+            </div>
+
+            <h2 style="margin-bottom: 25px; font-size: 24px;">My Recognition Badges</h2>
+            <div class="badges-grid">
+                <div class="badge-card">
+                    <div class="badge-icon">🏅</div>
+                    <h3>🛡️ Helper</h3>
+                    <p>Completed 10+ hours</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">⭐</div>
+                    <h3>⭐ Mentor</h3>
+                    <p>Mentored 5+ children</p>
+                </div>
+                <div class="badge-card">
+                    <div class="badge-icon">🦸</div>
+                    <h3>Super Teacher</h3>
+                    <p>Taught 100+ hours</p>
+                </div>
+            </div>
+
+            <h2 style="margin: 40px 0 25px; font-size: 24px;">Volunteer Matchmaking</h2>
+            <div class="opportunities-grid">
+                <div class="opportunity-card">
+                    <h3>Weekend Math Tutor for Grade 5</h3>
+                    <p class="opportunity-org">with Hope Foundation</p>
+                    <div class="skills-required">
+                        <span class="skill-tag">Mathematics</span>
+                        <span class="skill-tag">Teaching</span>
+                    </div>
+                    <div class="opportunity-details"><strong>Location:</strong> Mumbai, MH</div>
+                    <div class="opportunity-details"><strong>Commitment:</strong> 2-4 hours/week</div>
+                    <button class="btn btn-primary btn-full" style="margin-top: 15px;">🤝 Apply Now</button>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Creative Arts Workshop Facilitator</h3>
+                    <p class="opportunity-org">with Akshara Foundation</p>
+                    <div class="skills-required">
+                        <span class="skill-tag">Art</span>
+                        <span class="skill-tag">Crafts</span>
+                        <span class="skill-tag">Creativity</span>
+                    </div>
+                    <div class="opportunity-details"><strong>Location:</strong> Bengaluru, KA</div>
+                    <div class="opportunity-details"><strong>Commitment:</strong> 5 hours (one-time)</div>
+                    <button class="btn btn-primary btn-full" style="margin-top: 15px;">🤝 Apply Now</button>
+                </div>
+                <div class="opportunity-card">
+                    <h3>Coding Club Mentor</h3>
+                    <p class="opportunity-org">with Pratham</p>
+                    <div class="skills-required">
+                        <span class="skill-tag">Coding</span>
+                        <span class="skill-tag">Technology</span>
+                        <span class="skill-tag">Mentorship</span>
+                    </div>
+                    <div class="opportunity-details"><strong>Location:</strong> Remote</div>
+                    <div class="opportunity-details"><strong>Commitment:</strong> 3 hours/week</div>
+                    <button class="btn btn-primary btn-full" style="margin-top: 15px;">🤝 Apply Now</button>
+                </div>
+                <div class="opportunity-card">
+                    <h3>English Speaking Partner</h3>
+                    <p class="opportunity-org">with Teach for India</p>
+                    <div class="skills-required">
+                        <span class="skill-tag">English</span>
+                        <span class="skill-tag">Communication</span>
+                        <span class="skill-tag">Mentorship</span>
+                    </div>
+                    <div class="opportunity-details"><strong>Location:</strong> Remote</div>
+                    <div class="opportunity-details"><strong>Commitment:</strong> 2 hours/week</div>
+                    <button class="btn btn-primary btn-full" style="margin-top: 15px;">🤝 Apply Now</button>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <!-- Load scripts in correct order -->
+    <script src="config.js"></script>
+    <script src="oauth.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
