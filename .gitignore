@@ -1,7 +1,8 @@
 # EduBridge .gitignore
 
-# OAuth Configuration (contains sensitive credentials)
-config.js
+# OAuth Configuration (if it contains sensitive credentials)
+# Uncomment the line below if you want to keep config.js private
+# config.js
 
 # Environment variables
 .env
