@@ -4,7 +4,7 @@
 let currentUser = null;
 
 // Check if user is logged in on page load
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('DOMContentLoaded', function() {
     const savedUser = localStorage.getItem('edubridge_user');
     if (savedUser) {
         currentUser = JSON.parse(savedUser);
@@ -42,7 +42,7 @@ function switchToLogin() {
 // Handle login
 function handleLogin(event) {
     event.preventDefault();
-
+    
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
     const remember = document.getElementById('rememberMe').checked;
@@ -72,7 +72,7 @@ function handleLogin(event) {
         }
 
         showSuccess('loginSuccess', 'Login successful! Redirecting...');
-
+        
         setTimeout(() => {
             document.getElementById('loginModal').classList.remove('active');
             document.getElementById('mainContent').style.display = 'block';
@@ -87,7 +87,7 @@ function handleLogin(event) {
 // Handle signup
 function handleSignup(event) {
     event.preventDefault();
-
+    
     const name = document.getElementById('signupName').value;
     const email = document.getElementById('signupEmail').value;
     const password = document.getElementById('signupPassword').value;
@@ -158,7 +158,11 @@ function handleSignup(event) {
 
 // Social login
 function socialLogin(provider) {
-    alert(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login will be available soon!`);
+    if (provider === 'google') {
+        loginWithGoogle();
+    } else if (provider === 'github') {
+        loginWithGitHub();
+    }
 }
 
 // Show forgot password
@@ -174,7 +178,7 @@ function updateUserInterface() {
     if (currentUser) {
         document.getElementById('userName').textContent = currentUser.name;
         document.getElementById('userRole').textContent = currentUser.role;
-
+        
         const initials = currentUser.name.split(' ').map(n => n[0]).join('').toUpperCase();
         document.getElementById('userAvatar').textContent = initials;
         document.getElementById('topUserAvatar').textContent = initials;
@@ -195,7 +199,7 @@ function logout() {
     currentUser = null;
     document.getElementById('mainContent').style.display = 'none';
     showLogin();
-
+    
     // Reset forms
     document.getElementById('loginForm').reset();
     document.getElementById('signupForm').reset();
@@ -254,7 +258,7 @@ function showPage(pageId) {
         'progress-summary': 5,
         'volunteer-portal': 6
     };
-
+    
     if (navMap[pageId] !== undefined) {
         navItems[navMap[pageId]].classList.add('active');
     }
@@ -269,14 +273,14 @@ function showPage(pageId) {
         'progress-summary': 'Progress Summary',
         'volunteer-portal': 'Volunteer Portal'
     };
-
+    
     document.getElementById('pageTitle').textContent = titles[pageId] || 'Dashboard';
 
     // Scroll to top
     window.scrollTo(0, 0);
 }
 
-// Generate AI Summary
+// Generate AI Summary (Progress Summary page)
 function generateSummary() {
     const academic = document.getElementById('academic').value;
     const attendance = document.getElementById('attendance').value;
